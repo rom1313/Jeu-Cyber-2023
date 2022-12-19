@@ -1,0 +1,24 @@
+html {
+    text-align: center;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    width: fit-content;
+    background-color: aquamarine;
+}
+
+img {
+    width: 100%;
+
+    position: absolute;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}

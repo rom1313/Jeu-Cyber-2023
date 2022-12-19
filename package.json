@@ -1,0 +1,14 @@
+{
+  "name": "jeu-cyber",
+  "version": "1.0.0",
+  "description": "The default template for a Neutralinojs app. It's possible to use your favorite frontend framework by using [these steps](https://neutralino.js.org/docs/how-to/use-a-frontend-library).",
+  "mOain": "index.js",
+  "scripts": {
+    "dev": "neu run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rom13/genius": "^1.2.28"
+  }
+}
