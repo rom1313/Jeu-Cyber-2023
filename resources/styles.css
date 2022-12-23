@@ -22,3 +22,20 @@ button {
     left: 50%;
     z-index: 1;
 }
+
+#blockinfojoueur {
+    position: absolute;
+    color: red;
+    z-index: 2;
+    background-color: black;
+    width: 50px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+#logoargent {
+    width: 3%;
+}
