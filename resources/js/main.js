@@ -18,6 +18,7 @@ Neutralino.events.on('ready', () => {
 //TODO ------- LANCEMENT -----
 
 Neutralino.init();
+Neutralino.window.focus();
 
 //TODO ------- NEUTRALINO EVENT-----
 
