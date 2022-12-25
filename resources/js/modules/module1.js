@@ -1,7 +1,7 @@
 //TODO ----------------------------------------------
 //TODO ------- IMPORTS ET DECLARATION -----
 //TODO ----------------------------------------------
-export const prenom = "romain"
+export const prenom = "romain5"
 
 /* export function argent() {
     let image = document.querySelector("#image")

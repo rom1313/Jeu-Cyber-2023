@@ -1,17 +1,27 @@
-// This is just a sample app. You can structure your Neutralinojs app code as you wish.
-// This example app is written with vanilla JavaScript and HTML.
-// Feel free to use any frontend framework you like :)
-// See more details: https://neutralino.js.org/docs/how-to/use-a-frontend-library
+//TODO ----------------------------------------------
+//TODO ------- NEUTRALINO -----
+//TODO ----------------------------------------------
 
 
-function onWindowClose() {
+//TODO ------- FONCTION FERMER JEU -----
+
+function fermerjeu() {
     Neutralino.app.exit();
 }
 
+//TODO ------- FONCTION CENTRER APP ECRAN -----
+Neutralino.events.on('ready', () => {
+    Neutralino.window.move((screen.width / 2) - 684, (screen.height / 2) - 383);
+
+});
+
+//TODO ------- LANCEMENT -----
+
 Neutralino.init();
 
+//TODO ------- NEUTRALINO EVENT-----
 
-Neutralino.events.on("windowClose", onWindowClose);
+Neutralino.events.on("windowClose", fermerjeu);
 
 
 

@@ -13,11 +13,7 @@
     "enabled": true,
     "writeToLogFile": true
   },
-  "nativeAllowList": [
-    "app.*",
-    "os.*",
-    "debug.log"
-  ],
+  "nativeBlockList": [],
   "globalVariables": {
     "TEST1": "Hello",
     "TEST2": [
@@ -35,16 +31,14 @@
       "title": "myapp",
       "width": 1366,
       "height": 768,
-      "minWidth": 400,
-      "minHeight": 200,
-      "fullScreen": true,
-      "alwaysOnTop": false,
+      "fullScreen": false,
+      "alwaysOnTop": true,
       "icon": "/resources/icons/appIcon.png",
       "enableInspector": true,
       "borderless": true,
       "maximize": false,
       "hidden": false,
-      "resizable": true,
+      "resizable": false,
       "exitProcessOnClose": true
     },
     "browser": {
