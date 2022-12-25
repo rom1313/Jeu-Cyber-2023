@@ -29,6 +29,7 @@ var config = {
     width: 1366,
     height: 768,
     pixelArt: true,
+    resolution: window.devicePixelRatio,
     physics: {
         default: 'arcade',
         arcade: {
