@@ -6,6 +6,7 @@ html {
     width: 1300px;
     height: 650px;
     background-color: aqua;
+    cursor: url('./img/mouse.png'), pointer;
 }
 
 body {

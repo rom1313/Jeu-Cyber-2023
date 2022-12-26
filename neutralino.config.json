@@ -29,10 +29,10 @@
   "modes": {
     "window": {
       "title": "myapp",
-      "width": 1366,
+      "width": 1367,
       "height": 768,
       "fullScreen": false,
-      "alwaysOnTop": false,
+      "alwaysOnTop": true,
       "icon": "/resources/icons/appIcon.png",
       "enableInspector": true,
       "borderless": true,
