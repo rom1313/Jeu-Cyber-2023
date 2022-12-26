@@ -8,12 +8,10 @@
 const genius = $
 /* import { Phaser } from "../phaser.js"; */
 import { Joueur } from "./classes.js";
-import { prenom, modifierargent } from "./module1.js";
+import { prenom, modifierargent } from "./fonctions.js";
 import { Acceuil } from "./scenes/scene1.js";
 /* import { game } from "./scenes/scene1.js"; */
-oncontextmenu = () => {
-    return false
-}
+
 //TODO ------- programme -----
 
 console.log(genius.date());
@@ -42,6 +40,8 @@ var config = {
 var game = new Phaser.Game(config);
 
 //TODO ------- EVENTS -----
+
+oncontextmenu = () => { return false }
 
 genius.event("#button", "mousedown", () => {
     modifierargent(joueur, 10)

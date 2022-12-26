@@ -3,6 +3,7 @@ let personnage
 
 
 export class Acceuil extends Phaser.Scene {
+
     constructor() {
         super("Acceuil");
     }
@@ -22,7 +23,10 @@ export class Acceuil extends Phaser.Scene {
     }
 
     create() {
+        touchesclavier = this.input.keyboard.createCursorKeys();
+
         this.add.image(683, 384, 'fond');
+
         personnage = this.physics.add
             .sprite(500, 246, "personnage")
             .setInteractive(this.input.makePixelPerfect()).setSize(63, 46, true).setBounce(1, 1).setCollideWorldBounds(true);
@@ -56,23 +60,19 @@ export class Acceuil extends Phaser.Scene {
             repeat: -1
 
         });
-        touchesclavier = this.input.keyboard.createCursorKeys();
+
 
 
         touchesclavier.down.on("down", function (event) {
-
-
             personnage.setVelocity(0, 120);
-
             personnage.play("bas");
-
         });
     }
+
     update() {
 
         touchesclavier.down.on("up", function (event) {
             personnage.stop();
-            //  perso.play("walk");
             personnage.setVelocity(0, 0);
         });
     }
