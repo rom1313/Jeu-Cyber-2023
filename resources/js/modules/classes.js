@@ -1,3 +1,8 @@
+//TODO ----------------------------------------------
+//TODO ------- CLASSES-----
+//TODO ----------------------------------------------
+
+//TODO ------- JOUEUR -----
 export class Joueur {
 
     constructor(nom) {
@@ -8,7 +13,4 @@ export class Joueur {
         this.spe = 'vide'
         this.personnage = 'vide'
     }
-
-
-
 }

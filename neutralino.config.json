@@ -28,12 +28,12 @@
   },
   "modes": {
     "window": {
-      "title": "myapp",
+      "title": "Cyber Soul",
       "width": 1367,
       "height": 768,
       "fullScreen": false,
       "alwaysOnTop": true,
-      "icon": "/resources/icons/appIcon.png",
+      "icon": "/resources/img/recycler.png",
       "enableInspector": true,
       "borderless": true,
       "maximize": false,

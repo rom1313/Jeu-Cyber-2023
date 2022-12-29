@@ -1,7 +1,7 @@
 //TODO ----------------------------------------------
 //TODO ------- Main Script -----
 //TODO ----------------------------------------------
-
+export let testmj = 'ouiiii'
 
 //TODO ------- IMPORTS ET DECLARATION -----
 
