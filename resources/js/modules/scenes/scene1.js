@@ -1,6 +1,11 @@
 //TODO ------- VARIABLES ET IMPORTS -----
 let touchesclavier
+let touche
 let personnage
+// Get key object
+const genius = $
+
+
 import { testmj } from "../index.js";
 
 //TODO ------- SCENE -----
@@ -8,10 +13,15 @@ export class Acceuil extends Phaser.Scene {
 
     constructor() {
         super("Acceuil"); // nom de la scene 
+
     }
+
+
     //TODO ------- PRELOAD -----
 
     preload() {
+
+
         /* this.load.setBaseURL('http://labs.phaser.io'); charger à partir d'une url */
         console.log(testmj);
         this.load.image('fond', '../img/Map test.png') // import fond de scene
@@ -21,15 +31,16 @@ export class Acceuil extends Phaser.Scene {
     //TODO ------- CREATE -----
 
     create() {
+        touche = this.input.keyboard.addKeys('Z,S,Q,D,I,M,&');
 
         touchesclavier = this.input.keyboard.createCursorKeys(); // assignation aux touches
-
+        console.log(touche);
         this.add.image(683, 384, 'fond'); // creation fond de scene 
 
         personnage = this.physics.add.sprite(500, 246, "personnage").setInteractive(this.input.makePixelPerfect()).setSize(63, 46, true).setBounce(1, 1).setCollideWorldBounds(true);
         // creation personnage
         personnage.setDepth(2);
-        personnage.setScale(2, 2);
+        personnage.setScale(1, 1);
 
         /* 
         personnage.setDepth(2); // z-index
@@ -92,52 +103,38 @@ export class Acceuil extends Phaser.Scene {
 
 
         // EVENTS TOUCHES
-
-        touchesclavier.down.on("down", function (event) {
+        touche.S.on("down", function (event) {
+            console.log(personnage.x);
             personnage.setVelocity(0, 120);
             personnage.play("bas");
         });
 
 
-        touchesclavier.up.on("down", function (event) {
+        touche.Z.on("down", function (event) {
             personnage.setVelocity(0, -120);
             personnage.play("haut");
         });
-        touchesclavier.left.on("down", function (event) {
+
+        touche.Q.on("down", function (event) {
             personnage.setVelocity(-120, 0);
             personnage.play("gauche");
         });
-        touchesclavier.right.on("down", function (event) {
+
+        touche.D.on("down", function (event) {
             personnage.setVelocity(120, 0);
             personnage.play("droite");
         });
-
-
-
     }
     //TODO ------- UPDATE -----
 
 
     update() {
-
-        // EVENT TOUCHES
-
-        touchesclavier.down.on("up", function (event) {
-            personnage.stop("bas");
+        // Stopper les mouvements
+        if (touche.Q.isUp && touche.S.isUp && touche.D.isUp && touche.Z.isUp) {
             personnage.setVelocity(0, 0);
-        });
-        touchesclavier.up.on("up", function (event) {
-            personnage.stop("haut");
-            personnage.setVelocity(0, 0);
-        });
-        touchesclavier.left.on("up", function (event) {
             personnage.stop("gauche");
-            personnage.setVelocity(0, 0);
-        });
-        touchesclavier.right.on("up", function (event) {
-            personnage.stop("droite");
-            personnage.setVelocity(0, 0);
-        });
+        }
+
 
     }
 

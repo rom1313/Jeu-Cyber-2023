@@ -43,6 +43,18 @@ var game = new Phaser.Game(config);
 
 oncontextmenu = () => { return false }
 
-genius.event("#button", "mousedown", () => {
+/* genius.event("#button", "mousedown", () => {
     modifierargent(joueur, 10)
-})
+}) */
+
+ononline = () => {
+    console.log('en ligne !');
+}
+onoffline = () => {
+    console.log('hors ligne  !');
+}
+onclick = () => {
+    console.log('clik !');
+}
+
+console.log(window);
