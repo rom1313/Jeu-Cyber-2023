@@ -40,7 +40,7 @@ export class Acceuil extends Phaser.Scene {
         personnage = this.physics.add.sprite(500, 246, "personnage").setInteractive(this.input.makePixelPerfect()).setSize(63, 46, true).setBounce(1, 1).setCollideWorldBounds(true);
         // creation personnage
         personnage.setDepth(2);
-        personnage.setScale(1, 1);
+        personnage.setScale(2, 2);
 
         /* 
         personnage.setDepth(2); // z-index
