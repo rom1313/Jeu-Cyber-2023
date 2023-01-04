@@ -72,7 +72,7 @@ export class Acceuil extends Phaser.Scene {
             .setBounce(1, 1) // rebond sur colision
             .setCollideWorldBounds(true) // colision du monde
             .setDepth(2) // z-index
-            .setScale(2, 2); // scale
+            .setScale(1, 1); // scale
 
         // creation personnage
         this.torche = this.physics.add.sprite(500, 246, "torche")
