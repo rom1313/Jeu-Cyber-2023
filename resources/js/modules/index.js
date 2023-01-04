@@ -15,7 +15,7 @@ import { Acceuil } from "./scenes/scene1.js";
 //TODO ------- programme -----
 
 console.log(genius.date());
-let joueur = new Joueur('Invité')
+export let joueur = new Joueur('Invité')
 console.log(prenom);
 console.log(joueur);
 /* console.log(game); */
@@ -39,7 +39,7 @@ var config = {
 
 var game = new Phaser.Game(config);
 
-//TODO ------- EVENTS -----
+//TODO ------- EVENTS  Window -----
 
 oncontextmenu = () => { return false }
 
@@ -57,4 +57,6 @@ onclick = () => {
     console.log('clik !');
 }
 
-console.log(window);
+onload = () => {
+
+}

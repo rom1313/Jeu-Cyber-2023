@@ -34,3 +34,8 @@ canvas {
     background-color: blueviolet;
 
 }
+#test{
+    position: absolute;
+    color: red;
+    z-index: 5;
+}

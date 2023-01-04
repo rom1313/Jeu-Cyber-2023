@@ -2,6 +2,7 @@
 //TODO ------- IMPORTS ET DECLARATION -----
 //TODO ----------------------------------------------
 export const prenom = "romain5"
+const genius = $
 
 /* export function argent() {
     let image = document.querySelector("#image")
@@ -15,4 +16,32 @@ export function modifierargent(joueur, montant) {
     console.log(joueur);
     document.querySelector("#argentjoueur").textContent = joueur.argent
 
+}
+
+
+export function modifieretat(joueur) {
+
+
+}
+
+
+export function affichermessagesysteme(joueur, montant) {
+    joueur.argent += montant
+    console.log(joueur);
+    document.querySelector("#argentjoueur").textContent = joueur.argent
+
+}
+export function affichermessagedialogue(joueur, montant) {
+    joueur.argent += montant
+    console.log(joueur);
+    document.querySelector("#argentjoueur").textContent = joueur.argent
+
+}
+
+
+export function fonctionmajtexteinfocombat(variabledutexte) {
+    genius.timeursecondes(2,()=>{
+        variabledutexte.text = ""
+    })
+    console.log(variabledutexte);
 }
