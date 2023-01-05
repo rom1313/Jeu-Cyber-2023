@@ -49,7 +49,7 @@ export class Acceuil extends Phaser.Scene {
         console.log(testmj);
         this.load.image('fond', '../img/Map test.png') // import fond de scene
         this.load.image('particule', '../img/particulerouge.png'); //import particule
-        this.load.spritesheet("personnage", "../img/spriteHomme1.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
+        this.load.spritesheet("personnage", "../img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
         this.load.spritesheet("torche", "../img/spritetorche.png", { frameWidth: 46, frameHeight: 63 });
     }
     //TODO ------- CREATE -----
