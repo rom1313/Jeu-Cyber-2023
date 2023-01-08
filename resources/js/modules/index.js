@@ -2,6 +2,7 @@
 //TODO ------- Main Script -----
 //TODO ----------------------------------------------
 export let testmj = 'ouiiii'
+const socket = io("http://localhost:13000");
 
 //TODO ------- IMPORTS ET DECLARATION -----
 
@@ -46,7 +47,6 @@ oncontextmenu = () => { return false }
 /* genius.event("#button", "mousedown", () => {
     modifierargent(joueur, 10)
 }) */
-
 ononline = () => {
     console.log('en ligne !');
 }
@@ -58,5 +58,6 @@ onclick = () => {
 }
 
 onload = () => {
-
+    let datajoueur = joueur
+    socket.emit('connexionjeu', datajoueur)
 }
