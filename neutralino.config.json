@@ -29,10 +29,10 @@
   "modes": {
     "window": {
       "title": "Cyber Soul",
-      "width": 1366,
+      "width": 1367,
       "height": 768,
       "fullScreen": false,
-      "alwaysOnTop": false,
+      "alwaysOnTop": true,
       "icon": "/resources/img/recycler.png",
       "enableInspector": true,
       "borderless": true,

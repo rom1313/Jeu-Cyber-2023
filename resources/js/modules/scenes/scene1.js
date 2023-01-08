@@ -50,7 +50,7 @@ export class Acceuil extends Phaser.Scene {
         this.load.image('fond', '../img/Map test.png') // import fond de scene
         this.load.image('particule', '../img/particulerouge.png'); //import particule
         this.load.spritesheet("personnage", "../img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
-        this.load.spritesheet("torche", "../img/spritetorche.png", { frameWidth: 46, frameHeight: 63 });
+        this.load.spritesheet("torche", "../img/spritebitte.png", { frameWidth: 46, frameHeight: 63 });
     }
     //TODO ------- CREATE -----
 
@@ -76,7 +76,7 @@ export class Acceuil extends Phaser.Scene {
 
         // creation personnage
         this.torche = this.physics.add.sprite(500, 246, "torche")
-        this.torche2 = this.physics.add.sprite(500, 246, "torche")
+
         /*  personnage.alpha = 1; // changer opacité du personnage */
 
 
@@ -91,7 +91,7 @@ export class Acceuil extends Phaser.Scene {
         logo.setCollideWorldBounds(true);
 
 
-        emitter.startFollow(personnage);
+        emitter.startFollow(logo);
 
         // creation de styles texte 
         stylemessageinfo = { font: "15px impact", fill: "red", align: "center", display: "flex", justifyContent: "center", textShadow: "4px 5px 16px green", fontWeight: 'bold', stroke: "#000000", strokeThickness: 1.5 } // syle message info
@@ -107,7 +107,7 @@ export class Acceuil extends Phaser.Scene {
             } // fonction lors de la colision
         );
         // todo ----- ANIMATIONS Sprite
-
+        // todo -----  Personnage
         // marche bas
         this.anims.create({
             key: "bas",
@@ -148,6 +148,18 @@ export class Acceuil extends Phaser.Scene {
             repeat: -1
 
         });
+        // todo -----  bitte
+        this.anims.create({
+            key: "bitte",
+            frames: this.anims.generateFrameNumbers("torche", {
+                frames: [0, 1, 2, 1, 0]
+            }),
+            frameRate: 5,
+            repeat: -1
+
+        });
+        this.torche.play("bitte");
+
 
         // todo ----- ANIMATIONS Global
 
@@ -288,6 +300,26 @@ export class Acceuil extends Phaser.Scene {
         if (touche.Q.isUp && touche.S.isUp && touche.D.isUp && touche.Z.isUp) {
             personnage.setVelocity(0, 0);
             personnage.stop("gauche");
+        }
+        // diagonale haut/droite
+        if (touche.Z.isDown && touche.D.isDown) {
+            personnage.setVelocity(80, -80);
+            personnage.play("haut");
+        }
+        // diagonale bas/droite
+        if (touche.S.isDown && touche.D.isDown) {
+            personnage.setVelocity(80, 80);
+            personnage.play("bas");
+        }
+        // diagonale haut/GAUCHE
+        if (touche.Z.isDown && touche.Q.isDown) {
+            personnage.setVelocity(-80, -80);
+            personnage.play("haut");
+        }
+        // diagonale bas/GAUCHE
+        if (touche.S.isDown && touche.Q.isDown) {
+            personnage.setVelocity(-80, 80);
+            personnage.play("bas");
         }
 
         messageinfocombatjoueur.setPosition(personnage.x - 2.2, personnage.y - 49);
