@@ -3,7 +3,7 @@
 import { testmj, joueur } from "../index.js";
 import { Etats, Joueur } from "../classes.js";
 import { fonctionmajtexteinfocombat } from "../fonctions.js";
-
+import { game } from "../index.js"
 
 // VARIABLES
 let touchesclavierFLECHES
@@ -83,7 +83,7 @@ export class Acceuil extends Phaser.Scene {
 
         var particles = this.add.particles('particule'); // creation particule
 
-        var emitter = particles.createEmitter({ speed: 50, scale: { start: 0, end: 0.3 }, blendMode: 'ADD' }); // config des particules
+        var emitter = particles.createEmitter({ speed: 50, scale: { start: 0, end: 0.3, quantity: 6 }, blendMode: 'ADD' }); // config des particules
 
         logo = this.physics.add.image(400, 100, 'logo'); // creation du logo 
         logo.setVelocity(100, 200);
@@ -112,7 +112,7 @@ export class Acceuil extends Phaser.Scene {
         this.anims.create({
             key: "bas",
             frames: this.anims.generateFrameNumbers("personnage", {
-                frames: [0, 1, 2]
+                frames: [0, 1, 0, 2,]
             }),
             frameRate: 6,
             repeat: -1
@@ -122,7 +122,7 @@ export class Acceuil extends Phaser.Scene {
         this.anims.create({
             key: "haut",
             frames: this.anims.generateFrameNumbers("personnage", {
-                frames: [6, 7, 8]
+                frames: [6, 7, 6, 8]
             }),
             frameRate: 6,
             repeat: -1
@@ -190,7 +190,7 @@ export class Acceuil extends Phaser.Scene {
 
             // vitesse normal
             if (vitessepersonnage === 1) {
-                personnage.setVelocity(0, 120);
+                personnage.setVelocity(0, 150);
                 personnage.play("bas");
             }
             // vitesse courir
@@ -217,20 +217,20 @@ export class Acceuil extends Phaser.Scene {
         // touche déplacement haut ----------------->
 
         touche.Z.on("down", function (event) {
-            personnage.setVelocity(0, -120);
+            personnage.setVelocity(0, -150);
             personnage.play("haut");
         });
         // touche déplacement gauche ----------------->
 
         touche.Q.on("down", function (event) {
-            personnage.setVelocity(-120, 0);
+            personnage.setVelocity(-150, 0);
             personnage.play("gauche");
         });
 
         // touche déplacement droite ----------------->
 
         touche.D.on("down", function (event) {
-            personnage.setVelocity(120, 0);
+            personnage.setVelocity(150, 0);
             personnage.play("droite");
         });
 
@@ -246,6 +246,8 @@ export class Acceuil extends Phaser.Scene {
 
             if (joueur.vitesse === 1) { joueur.vitesse = 2 }
             else if (joueur.vitesse === 2) { joueur.vitesse = 1 }
+            scene.physics.moveToObject(logo, personnage, 100);
+
 
         });
 
@@ -295,32 +297,34 @@ export class Acceuil extends Phaser.Scene {
 
     update() {
 
+
         // Stopper les mouvements
 
         if (touche.Q.isUp && touche.S.isUp && touche.D.isUp && touche.Z.isUp) {
             personnage.setVelocity(0, 0);
-            personnage.stop("gauche");
+            personnage.stop()
+
         }
-        // diagonale haut/droite
+        /* // diagonale haut/droite
         if (touche.Z.isDown && touche.D.isDown) {
-            personnage.setVelocity(80, -80);
+            personnage.setVelocity(100, -100);
             personnage.play("haut");
         }
         // diagonale bas/droite
         if (touche.S.isDown && touche.D.isDown) {
-            personnage.setVelocity(80, 80);
+            personnage.setVelocity(100, 100);
             personnage.play("bas");
         }
         // diagonale haut/GAUCHE
         if (touche.Z.isDown && touche.Q.isDown) {
-            personnage.setVelocity(-80, -80);
+            personnage.setVelocity(-100, -100);
             personnage.play("haut");
         }
         // diagonale bas/GAUCHE
         if (touche.S.isDown && touche.Q.isDown) {
-            personnage.setVelocity(-80, 80);
+            personnage.setVelocity(-100, 100);
             personnage.play("bas");
-        }
+        } */
 
         messageinfocombatjoueur.setPosition(personnage.x - 2.2, personnage.y - 49);
 

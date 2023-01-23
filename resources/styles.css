@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "pixel";
+    src: url("./font/pixelex.ttf");
+}
+
 html {
     text-align: center;
     margin: 0;
@@ -6,7 +11,9 @@ html {
     width: 1300px;
     height: 650px;
     background-color: rgb(0, 0, 0);
-    cursor: url('./img/mouse.png'), pointer;
+    cursor: url('./img/mouse.png'), default;
+    user-select: none;
+
 }
 
 body {
@@ -15,15 +22,9 @@ body {
     box-sizing: border-box;
     width: fit-content;
     background-color: rgb(0, 0, 0);
+
 }
 
-
-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 4;
-}
 
 
 canvas {
@@ -34,8 +35,50 @@ canvas {
     background-color: blueviolet;
 
 }
-#test{
+
+#menuboutton {
     position: absolute;
-    color: red;
+    background-color: black;
+    z-index: 4;
+    top: 40px;
+    left: 60px;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    width: 70px;
+    user-select: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(0, 232, 228);
+    margin: 0px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    cursor: url('./img/mouse2.png'), pointer;
+    font-family: "pixel";
+
+
+}
+
+#menuboutton:hover {}
+
+#menu {
+    width: 700px;
+    height: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 5;
+    background-color: rgba(92, 0, 0, 0.252);
+    border-radius: 5px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+}
+
+#portrait {
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 2px;
 }

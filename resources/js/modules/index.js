@@ -15,13 +15,15 @@ import { Acceuil } from "./scenes/scene1.js";
 
 //TODO ------- programme -----
 
-console.log(genius.date());
+
 export let joueur = new Joueur('Invité')
 console.log(prenom);
 console.log(joueur);
 /* console.log(game); */
 console.log(window.innerWidth);
 console.log(window.innerHeight);
+
+
 //TODO ------- PHASER -----
 var config = {
     type: Phaser.AUTO,
@@ -38,7 +40,7 @@ var config = {
     scene: [Acceuil],
 };
 
-var game = new Phaser.Game(config);
+export var game = new Phaser.Game(config);
 
 //TODO ------- EVENTS  Window -----
 
@@ -61,3 +63,6 @@ onload = () => {
     let datajoueur = joueur
     socket.emit('connexionjeu', datajoueur)
 }
+
+//TODO ------- SOCKET -----
+

@@ -32,7 +32,7 @@
       "width": 1367,
       "height": 768,
       "fullScreen": false,
-      "alwaysOnTop": true,
+      "alwaysOnTop": false,
       "icon": "/resources/img/recycler.png",
       "enableInspector": true,
       "borderless": true,
