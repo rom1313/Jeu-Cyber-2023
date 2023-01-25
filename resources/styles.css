@@ -1,8 +1,12 @@
+/* TODO ---------------------------------- FONT ------------*/
+
 @font-face {
     font-family: "pixel";
     src: url("./font/pixelex.ttf");
 }
+/* TODO ---------------------------------- ANIMATIONS ------------*/
 
+/* TODO ---------------------------------- HTML / BODY ------------*/
 html {
     text-align: center;
     margin: 0;
@@ -25,6 +29,8 @@ body {
 
 }
 
+/* TODO ---------------------------------- CANVAS (surface de jeu) ------------*/
+
 
 
 canvas {
@@ -36,12 +42,14 @@ canvas {
 
 }
 
+
+
 #menuboutton {
     position: absolute;
     background-color: black;
     z-index: 4;
     top: 40px;
-    left: 60px;
+    left: 90px;
     transform: translate(-50%, -50%);
     height: 20px;
     width: 70px;
@@ -81,4 +89,14 @@ canvas {
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 2px;
+}
+
+/* TODO ---------------------------------- INTERNET ------------*/
+
+#notifinternet {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }

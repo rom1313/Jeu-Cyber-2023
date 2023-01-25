@@ -43,10 +43,10 @@ export class Acceuil extends Phaser.Scene {
 
         /* this.load.setBaseURL('http://labs.phaser.io'); charger des ressources à partir d'une url */
         console.log(testmj);
-        this.load.image('fond', '../img/Map test.png') // import fond de scene
-        this.load.image('particule', '../img/particulerouge.png'); //import particule
-        this.load.spritesheet("personnage", "../img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
-        this.load.spritesheet("torche", "../img/spritebitte.png", { frameWidth: 46, frameHeight: 63 });
+        this.load.image('fond', 'img/Map test.png') // import fond de scene
+        this.load.image('particule', 'img/particulerouge.png'); //import particule
+        this.load.spritesheet("personnage", "img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
+        this.load.spritesheet("torche", "img/spritebitte.png", { frameWidth: 46, frameHeight: 63 });
     }
     //TODO ------- CREATE -----
 

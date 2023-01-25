@@ -51,3 +51,5 @@ export class Etats {
 
 
 }
+
+export const event = new Event('customevent')
