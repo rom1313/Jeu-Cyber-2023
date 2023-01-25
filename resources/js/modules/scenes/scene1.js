@@ -2,18 +2,18 @@
 // IMPORTS
 import { testmj, joueur } from "../index.js";
 import { Etats, Joueur } from "../classes.js";
-import { fonctionmajtexteinfocombat } from "../fonctions.js";
+import { fonctionmajtexteinfocombat, degats } from "../fonctions.js";
 import { game } from "../index.js"
 
 // VARIABLES
 let touchesclavierFLECHES
 let touche
-let personnage
+export let personnage
 let vitessepersonnage
 var logo
 let camera
-let scene
-let messageinfocombatjoueur;
+export let scene
+export let degattexte;
 let sourcedelumierejoueur
 const genius = $
 // variables styles text
@@ -25,11 +25,7 @@ let lumiere1
 
 let etat = new Etats()
 // fonctions
-function fonctioninfocombat(variabledutexte, contenu) {
-    variabledutexte.text = contenu
 
-
-}
 
 //TODO ------- SCENE -----
 export class Acceuil extends Phaser.Scene {
@@ -95,7 +91,7 @@ export class Acceuil extends Phaser.Scene {
 
         // creation de styles texte 
         stylemessageinfo = { font: "15px impact", fill: "red", align: "center", display: "flex", justifyContent: "center", textShadow: "4px 5px 16px green", fontWeight: 'bold', stroke: "#000000", strokeThickness: 1.5 } // syle message info
-        messageinfocombatjoueur = scene.add.text(personnage.x, personnage.y, "", stylemessageinfo).setDepth(2) // creation message info text vide
+        degattexte = scene.add.text(personnage.x, personnage.y, "", stylemessageinfo).setDepth(2) // creation message info text vide
         // todo ------------- Colisions ---------------------->
 
         this.physics.add.collider(personnage, [logo], // ajout de colision entres sprites
@@ -236,9 +232,8 @@ export class Acceuil extends Phaser.Scene {
 
         // touche ECHAP ----------------->
         touche.ESC.on("down", function (event) {
+            degats(5, joueur.def)
 
-            fonctioninfocombat(messageinfocombatjoueur, texttest)
-            texttest++
         });
 
         // touche ESPACE ----------------->
@@ -326,7 +321,8 @@ export class Acceuil extends Phaser.Scene {
             personnage.play("bas");
         } */
 
-        messageinfocombatjoueur.setPosition(personnage.x - 2.2, personnage.y - 49);
+
+        degattexte.setPosition(personnage.x - 3.3, personnage.y - 49); // maj position du text degat sur le joueur
 
 
 

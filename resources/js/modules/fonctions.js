@@ -1,7 +1,11 @@
 //TODO ----------------------------------------------
 //TODO ------- IMPORTS ET DECLARATION -----
 //TODO ----------------------------------------------
-export const prenom = "romain5"
+
+
+import { personnage } from "./scenes/scene1.js";
+import { scene } from "./scenes/scene1.js";
+import { degattexte } from "./scenes/scene1.js";
 const genius = $
 
 /* export function argent() {
@@ -10,6 +14,9 @@ const genius = $
     console.log(image.src);
     console.log(joueur);
 } */
+
+
+
 
 export function modifierargent(joueur, montant) {
     joueur.argent += montant
@@ -40,8 +47,22 @@ export function affichermessagedialogue(joueur, montant) {
 
 
 export function fonctionmajtexteinfocombat(variabledutexte) {
-    genius.timeursecondes(2,()=>{
+    genius.timeursecondes(2, () => {
         variabledutexte.text = ""
     })
-    console.log(variabledutexte);
+
+}
+
+export function fonctioninfocombat(variabledutexte, contenu) {
+    variabledutexte.text = contenu
+
+
+}
+export function degats(atk, def) {
+    let degat = atk - def
+    fonctioninfocombat(degattexte, degat)
+    fonctionmajtexteinfocombat(degattexte)
+    console.log(scene);
+
+
 }

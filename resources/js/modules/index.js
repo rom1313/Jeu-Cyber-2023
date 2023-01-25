@@ -9,7 +9,7 @@ const socket = io("http://localhost:13000");
 const genius = $
 /* import { Phaser } from "../phaser.js"; */
 import { Joueur } from "./classes.js";
-import { prenom, modifierargent } from "./fonctions.js";
+import { modifierargent } from "./fonctions.js";
 import { Acceuil } from "./scenes/scene1.js";
 /* import { game } from "./scenes/scene1.js"; */
 
@@ -17,7 +17,7 @@ import { Acceuil } from "./scenes/scene1.js";
 
 
 export let joueur = new Joueur('Invité')
-console.log(prenom);
+
 console.log(joueur);
 /* console.log(game); */
 console.log(window.innerWidth);

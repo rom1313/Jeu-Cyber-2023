@@ -15,6 +15,8 @@ export class Joueur {
         this.vitesse = 1
         this.visible = true
         this.etat = ""
+        this.def = 3
+        this.atk = 2
     }
 }
 
