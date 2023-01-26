@@ -80,6 +80,31 @@ genius.event("html", "customevent", () => {
     console.log('custom event ! ');
 })
 
+
+genius.event("#notifinternet", "mouseover", (e) => {
+    let p = genius.element("p", "#infobulle")
+    p.style.left = "70px"
+    p.style.top = "17px"
+    console.log(e.target.src);
+    if (e.target.src === "http://localhost:12000/img/interneton.png") {
+        genius.textContent('Online', "#infobulle")
+    }
+    else {
+        genius.textContent('Offline', "#infobulle")
+    }
+
+
+
+
+})
+genius.event("#notifinternet", "mouseout", (e) => {
+    document.querySelector("#infobulle").remove()
+
+
+    console.log(e.clientX);
+})
+
 //TODO ------- SOCKET -----
 
 console.log(navigator.onLine);
+console.log(navigator.pointer);

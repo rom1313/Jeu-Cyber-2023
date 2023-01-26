@@ -21,6 +21,7 @@ let stylemessageinfo
 let texttest = `1`
 let lumiere1
 
+
 // initialisation
 
 let etat = new Etats()
@@ -47,6 +48,7 @@ export class Acceuil extends Phaser.Scene {
         this.load.image('particule', 'img/particulerouge.png'); //import particule
         this.load.spritesheet("personnage", "img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
         this.load.spritesheet("torche", "img/spritebitte.png", { frameWidth: 46, frameHeight: 63 });
+        this.load.spritesheet("filet", "img/spritefilet.png", { frameWidth: 46, frameHeight: 63 });
     }
     //TODO ------- CREATE -----
 
@@ -72,14 +74,14 @@ export class Acceuil extends Phaser.Scene {
 
         // creation personnage
         this.torche = this.physics.add.sprite(500, 246, "torche")
-
+        this.filet = this.physics.add.sprite(150, 0, "filet").setVelocity(0, 300).setCollideWorldBounds(true).setBounce(1, 1).setSize(10, 10, true).setScale(2,2)
         /*  personnage.alpha = 1; // changer opacité du personnage */
 
 
 
-        var particles = this.add.particles('particule'); // creation particule
+        var particles = this.add.particles('filet'); // creation particule
 
-        var emitter = particles.createEmitter({ speed: 50, scale: { start: 0, end: 0.3, quantity: 6 }, blendMode: 'ADD' }); // config des particules
+        var emitter = particles.createEmitter({ speed: 1, scale: { start: 0, end: 1, quantity: 10 }, blendMode: 'ADD' }); // config des particules
 
         logo = this.physics.add.image(400, 100, 'logo'); // creation du logo 
         logo.setVelocity(100, 200);
@@ -155,6 +157,19 @@ export class Acceuil extends Phaser.Scene {
 
         });
         this.torche.play("bitte");
+
+
+        // todo -----  filet
+        this.anims.create({
+            key: "filet",
+            frames: this.anims.generateFrameNumbers("filet", {
+                frames: [0, 1, 2, 3, 2, 1,]
+            }),
+            frameRate: 20,
+            repeat: -1
+
+        });
+        this.filet.play("filet");
 
 
         // todo ----- ANIMATIONS Global

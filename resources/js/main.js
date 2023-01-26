@@ -11,7 +11,7 @@ function fermerjeu() {
 
 //TODO ------- FONCTION CENTRER APP ECRAN -----
 Neutralino.events.on('ready', () => {
-    Neutralino.window.move((screen.width / 2) - 684, (screen.height / 2) - 383);
+    Neutralino.window.move((screen.width / 2) - 683, (screen.height / 2) - 384);
 
 });
 

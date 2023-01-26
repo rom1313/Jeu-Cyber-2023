@@ -8,24 +8,23 @@
 
 /* TODO ---------------------------------- HTML / BODY ------------*/
 html {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    width: 1300px;
-    height: 650px;
-    background-color: rgb(0, 0, 0);
-    cursor: url('./img/mouse.png'), default;
+ 
     user-select: none;
 
 }
 
-body {
+body {   
+    text-align: center;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     width: fit-content;
     background-color: rgb(0, 0, 0);
+    cursor: url('./img/mouse.png'), default;
 
 }
 
@@ -80,6 +79,7 @@ canvas {
     border-radius: 5px;
     border: solid 1px black;
     box-shadow: 0px 0px 4px rgb(0, 0, 0);
+    visibility: hidden;
 }
 
 #portrait {
@@ -95,8 +95,21 @@ canvas {
 
 #notifinternet {
     position: absolute;
-    top: 20px;
-    left: 30px;
+    top: 25px;
+    left: 25px;
     transform: translate(-50%, -50%);
     z-index: 10;
+    cursor: url('./img/mouse2.png'), pointer;
+}
+
+#infobulle{
+    position: absolute;
+    font-family: "pixel";
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    z-index: 5;
+    font-size: 8px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
 }
