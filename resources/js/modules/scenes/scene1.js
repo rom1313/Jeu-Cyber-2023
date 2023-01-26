@@ -20,8 +20,8 @@ const genius = $
 let stylemessageinfo
 let texttest = `1`
 let lumiere1
-
-
+let parralax
+let parralax2
 // initialisation
 
 let etat = new Etats()
@@ -44,6 +44,8 @@ export class Acceuil extends Phaser.Scene {
 
         /* this.load.setBaseURL('http://labs.phaser.io'); charger des ressources à partir d'une url */
         console.log(testmj);
+        this.load.image('parallax', 'img/parallaxtitre.png') 
+        this.load.image('parallax2', 'img/parallaxtitre2.png') 
         this.load.image('fond', 'img/Map test.png') // import fond de scene
         this.load.image('particule', 'img/particulerouge.png'); //import particule
         this.load.spritesheet("personnage", "img/spriteHomme2.png", { frameWidth: 46, frameHeight: 63 }); // import sprite personnage
@@ -53,8 +55,12 @@ export class Acceuil extends Phaser.Scene {
     //TODO ------- CREATE -----
 
     create() {
+        var container = this.add.container(715, 380).setName('conty');
 
-
+        parralax = this.add.tileSprite(0, 0, 1400, 768, 'parallax').setName('tiley');
+        parralax2 = this.add.tileSprite(0, 0, 1400, 768, 'parallax2').setName('tiley');
+        container.add(parralax);
+        container.add(parralax2);
         touche = this.input.keyboard.addKeys('Z,S,Q,D,A,B,C,E,F,G,H,I,J,K,L,M,N,O,P,R,T,U,V,W,X,Y,ESC,SPACE'); // creation des touches
 
         camera = this.cameras.main; // creation d'une camera
@@ -62,7 +68,7 @@ export class Acceuil extends Phaser.Scene {
 
         touchesclavierFLECHES = this.input.keyboard.createCursorKeys(); // creation des touches fléchés
 
-        this.background = this.add.image(683, 384, 'fond'); // creation fond de scene 
+        /*     this.background = this.add.image(683, 384, 'fond'); */ // creation fond de scene 
 
         personnage = this.physics.add.sprite(500, 246, "personnage")
             .setInteractive(this.input.makePixelPerfect()) // hitbox parfaite
@@ -74,7 +80,7 @@ export class Acceuil extends Phaser.Scene {
 
         // creation personnage
         this.torche = this.physics.add.sprite(500, 246, "torche")
-        this.filet = this.physics.add.sprite(150, 0, "filet").setVelocity(0, 300).setCollideWorldBounds(true).setBounce(1, 1).setSize(10, 10, true).setScale(2,2)
+        this.filet = this.physics.add.sprite(150, 0, "filet").setVelocity(0, 300).setCollideWorldBounds(true).setBounce(1, 1).setSize(10, 10, true).setScale(2, 2)
         /*  personnage.alpha = 1; // changer opacité du personnage */
 
 
@@ -306,7 +312,8 @@ export class Acceuil extends Phaser.Scene {
 
 
     update() {
-
+        parralax.tilePositionY += 5
+        parralax2.tilePositionY -= 4
 
         // Stopper les mouvements
 

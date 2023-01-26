@@ -4,7 +4,17 @@
     font-family: "pixel";
     src: url("./font/pixelex.ttf");
 }
+
 /* TODO ---------------------------------- ANIMATIONS ------------*/
+@keyframes clignotement {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 /* TODO ---------------------------------- HTML / BODY ------------*/
 html {
@@ -12,12 +22,12 @@ html {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
- 
+
     user-select: none;
 
 }
 
-body {   
+body {
     text-align: center;
     margin: 0px;
     padding: 0px;
@@ -102,7 +112,7 @@ canvas {
     cursor: url('./img/mouse2.png'), pointer;
 }
 
-#infobulle{
+#infobulle {
     position: absolute;
     font-family: "pixel";
     transform: translate(-50%, -50%);
@@ -112,4 +122,10 @@ canvas {
     border-radius: 2px;
     color: white;
     padding: 5px;
+}
+
+#logotitre {
+    position: absolute;
+    z-index: 6;
+    animation: clignotement 2s ease infinite alternate;
 }
