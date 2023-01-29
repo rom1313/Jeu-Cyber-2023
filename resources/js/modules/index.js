@@ -108,3 +108,9 @@ genius.event("#notifinternet", "mouseout", (e) => {
 
 console.log(navigator.onLine);
 console.log(navigator.pointer);
+console.log(joueur);
+let { vitesse, def, atk, ...rest } = joueur
+
+
+console.log(rest);
+console.log(joueur);
